@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcosta-d <tcosta-d@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tcosta-d < tcosta-d@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 00:46:56 by tcosta-d          #+#    #+#             */
-/*   Updated: 2023/08/23 00:46:56 by tcosta-d         ###   ########.fr       */
+/*   Created: 2023/04/15 14:48:47 by tcosta-d          #+#    #+#             */
+/*   Updated: 2023/05/05 17:19:56 by tcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-typedef struct s_stack
+int	ft_isalpha(int c)
 {
-    long            number;
-    long            index;
-    struct s_stack  *next;
-    struct s_stack  *prev;
-} t_stack;
-
-
-
-#endif
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcosta-d <tcosta-d@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tcosta-d < tcosta-d@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 00:46:56 by tcosta-d          #+#    #+#             */
-/*   Updated: 2023/08/23 00:46:56 by tcosta-d         ###   ########.fr       */
+/*   Created: 2023/05/11 12:00:18 by tcosta-d          #+#    #+#             */
+/*   Updated: 2023/05/11 12:50:16 by tcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-typedef struct s_stack
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    long            number;
-    long            index;
-    struct s_stack  *next;
-    struct s_stack  *prev;
-} t_stack;
-
-
-
-#endif
+	if (lst != NULL)
+	{
+		del(lst->content);
+		free(lst);
+		lst = NULL;
+	}
+}

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcosta-d <tcosta-d@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tcosta-d < tcosta-d@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 00:46:56 by tcosta-d          #+#    #+#             */
-/*   Updated: 2023/08/23 00:46:56 by tcosta-d         ###   ########.fr       */
+/*   Created: 2023/05/05 16:13:21 by tcosta-d          #+#    #+#             */
+/*   Updated: 2023/05/05 16:17:08 by tcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-typedef struct s_stack
+char	*ft_strdup(const char *s)
 {
-    long            number;
-    long            index;
-    struct s_stack  *next;
-    struct s_stack  *prev;
-} t_stack;
+	char	*ptr;
 
-
-
-#endif
+	ptr = (char *)malloc(ft_strlen(s) +1);
+	if (!ptr)
+		return (NULL);
+	ft_strlcpy(ptr, s, ft_strlen(s) +1);
+	return (ptr);
+}

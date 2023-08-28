@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonuc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcosta-d <tcosta-d@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: tcosta-d < tcosta-d@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 00:46:56 by tcosta-d          #+#    #+#             */
-/*   Updated: 2023/08/23 00:46:56 by tcosta-d         ###   ########.fr       */
+/*   Created: 2023/05/10 17:42:33 by tcosta-d          #+#    #+#             */
+/*   Updated: 2023/05/10 17:53:49 by tcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-typedef struct s_stack
+t_list	*ft_lstnew(void *content)
 {
-    long            number;
-    long            index;
-    struct s_stack  *next;
-    struct s_stack  *prev;
-} t_stack;
+	t_list	*node;
 
-
-
-#endif
+	node = (t_list *)malloc(sizeof(t_list));
+	if (node == NULL)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
+}
